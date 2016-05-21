@@ -4,6 +4,7 @@ The web app compares soil analysis results to Arabica coffee tree's optimal cont
 
 # Develop
 
+    git clone git@github.com:nathandao/bineral.git
     cd bineral
     npm install
     npm run watch
