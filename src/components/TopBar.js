@@ -1,15 +1,12 @@
-import React from 'react';
-import AppBar from 'material-ui/AppBar';
+import React from 'react'
+import AppBar from 'material-ui/AppBar'
+import t from '../t'
 
-class TopBar extends React.Component {
-  render() {
-    return(
-      <AppBar
-          title='Fertilizer calculator'
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-      />
-    );
-  }
-};
+const TopBar = () => (
+  <AppBar
+      title={ t("FERTILIZER_CALCULATOR") }
+      iconClassNameRight="muidocs-icon-navigation-expand-more"
+  />
+)
 
-export default TopBar;
+export default TopBar

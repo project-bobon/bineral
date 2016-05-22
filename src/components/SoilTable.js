@@ -1,5 +1,10 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import t from '../t';
+import OmClayPercentage from './OmClayPercentage';
+import SoilDensity from './SoilDensity';
 import {
   Table,
   TableBody,
@@ -10,23 +15,27 @@ import {
 } from 'material-ui/Table';
 
 class SoilTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      om_clay_p: 0,
+      soil_density: 0
+    }
+  }
+
+  static childContextTypes = {
+    muiTheme: React.PropTypes.object.isRequired
+  };
+
+  getChildContext() {
+    return {muiTheme: getMuiTheme(baseTheme)};
+  }
+
   render() {
     return(
-      <section>
-        <TextField
-            id="om_clay_p"
-            hintText="OM - Soil percentage"
-            errorText="This field is required"
-            floatingLabelText="OM - Soil Percentage"
-            type="number"
-        />
-        <TextField
-            id="soil_density"
-            hintText="OM - Soil density"
-            errorText="This field is required"
-            floatingLabelText="OM - Soil Density"
-            type="number"
-        />
+     <section>
+        <OmClayPercentage />
+        <SoilDensity />
       </section>
     );
   }

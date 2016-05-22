@@ -1,4 +1,4 @@
-const optimizedVal = {
+export const optimizedVal = {
   fe13: {
     OM: 1.9,
     N: 1.04,
@@ -54,5 +54,3 @@ const optimizedVal = {
     cation: 7.5
   }
 };
-
-export default optimizedVal;
