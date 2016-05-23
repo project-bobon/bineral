@@ -10,7 +10,7 @@ const labels = [
   {
     id: "N",
     text: chemistry.N,
-    unit: "ppm"
+    unit: "meq%"
   },
   {
     id: "P2o5",
@@ -20,17 +20,17 @@ const labels = [
   {
     id: "K",
     text: chemistry.K,
-    unit: "ppm"
+    unit: "meq%"
   },
   {
     id: "Ca",
     text: chemistry.Ca,
-    unit: "ppm"
+    unit: "meq%"
   },
   {
     id: "Mg",
     text: chemistry.Mg,
-    unit: "ppm"
+    unit: "meq%"
   }
 ];
 
