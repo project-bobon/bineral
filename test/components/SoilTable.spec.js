@@ -1,17 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { expect } from 'chai';
-
 import SoilTable from '../../src/components/SoilTable';
+import labels from '../../src/data/labels';
 
 describe('<SoilTable>', () => {
-  it('should have input field for om clay percentage', () => {
-    const wrapper = mount(<SoilTable/>);
-    expect(wrapper.find('#om_clay_p')).to.have.length(1);
-  });
-
-  it('should have input field for soil density', () => {
-    const wrapper = mount(<SoilTable/>);
-    expect(wrapper.find('#soil_density')).to.have.length(1);
+  it('should have all mineral rows', () => {
+    const wrapper = shallow(<SoilTable/>);
+    labels.forEach((l) => {
+      expect(wrapper.find('.soil-reading-row-' + l.id)).to.have.length(1);
+    });
   });
 });

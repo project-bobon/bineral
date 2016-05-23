@@ -12,17 +12,15 @@ const NumberField = (
       hintText={ hintText }
       errorText={ errorText }
       floatingLabelText={ floatingLabelText }
-      onChange={ onChange }
       type="number"
   />
-)
+);
 
 NumberField.propTypes = {
   id: PropTypes.string.isRequired,
   hintText: PropTypes.string,
   errorText: PropTypes.string,
   floatingLabelText: PropTypes.string,
-  onChange: PropTypes.func.isRequired
-}
+};
 
-export default NumberField
+export default NumberField;

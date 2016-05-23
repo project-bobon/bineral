@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import App from '../../src/components/App';
-import SoilTable from '../../src/components/SoilTable';
+import SoilReadings from '../../src/containers/SoilReadings';
 import TopBar from '../../src/components/TopBar';
 
 describe('<App>', () => {
@@ -12,8 +12,13 @@ describe('<App>', () => {
     expect(wrapper.find(TopBar)).to.have.length(1);
   });
 
-  it('should have a SoilTable', () => {
+  it('should have an om clay percentage field', () => {
     const wrapper = shallow(<App/>);
-    expect(wrapper.find(SoilTable)).to.have.length(1);
+    expect(wrapper.find(TopBar)).to.have.length(1);
+  });
+
+  it('should have SoilReadings', () => {
+    const wrapper = shallow(<App/>);
+    expect(wrapper.find(SoilReadings)).to.have.length(1);
   });
 });

@@ -1,4 +1,4 @@
-export const chemistry = {
+const chemistry = {
   B: "B",
   Ca: "Ca",
   Cu: "Cu",
@@ -7,9 +7,13 @@ export const chemistry = {
   K2O: "K₂O",
   K: "K",
   Mn: "Mn",
+  Mg: "Mg",
   N: "N",
   P2O5: "P2O5",
   P: "P",
   Zn: "Zn",
-  pH: "pH"
+  pH: "pH",
+  OM: "OM"
 };
+
+export default chemistry;

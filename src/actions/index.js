@@ -1,14 +1,21 @@
 import * as types from '../constants/actionTypes';
 
-export default updateData = (id, value) => {
+export const updateReading = (id, value) => {
   return {
-    type: types.UPDATE_DATA,
+    type: types.UPDATE_READING,
     id,
     value
   };
 };
 
-export default setLanguage = (language) => {
+export const updateOmClayPercentage = (value) => {
+  return {
+    type: types.UPDATE_OM_CLAY_PERCENTAGE,
+    value
+  };
+};
+
+export const setLanguage = (language) => {
   return {
     type: types.SET_LANGUAGE,
     language

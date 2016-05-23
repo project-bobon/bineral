@@ -18,6 +18,10 @@ const textData = {
   REQUIRED_FIELD: {
     EN: "This field is required",
     VN: "Thông tin bắt buộc"
+  },
+  OM: {
+    EN: "Organic material",
+    VN: "Chất hữu cơ"
   }
 };
 
