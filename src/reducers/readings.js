@@ -14,12 +14,7 @@ const readings = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_READING:
       // Update field value.
-      let index;
-      state.forEach((r, i) => {
-        if (r.id === action.id) {
-          index = i;
-        }
-      });
+      let index = state.findIndex((r) => r.id === action.id);
       if (typeof(index) === 'undefined') {
         return [
           ...state,
