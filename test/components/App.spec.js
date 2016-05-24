@@ -34,7 +34,7 @@ describe('<App>', () => {
     const wrapper = renderApp();
     ids.forEach((id) => {
       expect(wrapper.find('.soil-reading-row-' + id)).to.have.length(1);
-      expect(wrapper.find('#soil' + id)).to.have.length(1);
+      expect(wrapper.find('#' + id)).to.have.length(1);
     });
   });
 });

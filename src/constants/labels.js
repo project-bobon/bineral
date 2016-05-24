@@ -3,37 +3,37 @@ import t from '../t';
 
 const labels = [
   {
-    id: "Om",
+    id: "soilOm",
     text: t("OM"),
     unit: "%"
   },
   {
-    id: "N",
+    id: "soilN",
     text: chemistry.N,
     unit: "meq%"
   },
   {
-    id: "P2o5",
+    id: "soilP2o5",
     text: chemistry.P2O5,
     unit: "ppm"
   },
   {
-    id: "K",
+    id: "soilK",
     text: chemistry.K,
     unit: "meq%"
   },
   {
-    id: "Ca",
+    id: "soilCa",
     text: chemistry.Ca,
     unit: "meq%"
   },
   {
-    id: "Mg",
+    id: "soilMg",
     text: chemistry.Mg,
     unit: "meq%"
   },
   {
-    id: "Cation",
+    id: "soilCation",
     text: chemistry.Cation,
     unit: "%"
   }

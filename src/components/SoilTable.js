@@ -42,7 +42,7 @@ const SoilTable = ({ optimizedSoilValues }) => {
               >
                 <TableRowColumn>
                   <ReadingField
-                      id={ 'soil' + l.id }
+                      id={ l.id }
                       floatingLabelText={ l.text + ' (' + l.unit + ')' }
                   /> { l.unit }
                 </TableRowColumn>
