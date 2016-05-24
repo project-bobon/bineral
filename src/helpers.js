@@ -1,7 +1,7 @@
-import { optimizedSoilValues } from '../constants/optimizedValues';
+import { optimizedSoilValues } from './constants/optimizedValues';
 
-const getOptimizedSoilValues = (fe = 13) => {
-  let feId = 13;
+export const getOptimizedSoilValues = (fe = 0) => {
+  let feId = 0;
   if (fe >= 37.5 ) {
     feId = 41;
   } else if (fe >= 31) {
@@ -12,8 +12,8 @@ const getOptimizedSoilValues = (fe = 13) => {
     feId = 23;
   } else if (fe >= 15.5) {
     feId = 18;
+  } else if (fe >= 8) {
+    feId = 13;
   }
   return optimizedSoilValues['fe' + feId];
 };
-
-export default getOptimizedSoilValues;

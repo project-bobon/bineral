@@ -1,4 +1,4 @@
-import * as types from '../constants/actionTypes';
+import * as types from './constants/actionTypes';
 
 export const updateReading = (id, value) => {
   return {
@@ -15,9 +15,9 @@ export const updateOmClayPercentage = (value) => {
   };
 };
 
-export const setLanguage = (language) => {
+export const setLanguage = (id) => {
   return {
     type: types.SET_LANGUAGE,
-    language
+    id
   };
 };

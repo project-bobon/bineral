@@ -31,6 +31,11 @@ const labels = [
     id: "Mg",
     text: chemistry.Mg,
     unit: "meq%"
+  },
+  {
+    id: "Cation",
+    text: chemistry.Cation,
+    unit: "%"
   }
 ];
 

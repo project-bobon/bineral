@@ -1,5 +1,5 @@
 import { UPDATE_READING } from '../constants/actionTypes';
-import getOptimizedSoilValues from '../helpers/getOptimizedSoilValues';
+import { getOptimizedSoilValues } from '../helpers';
 
 const initialState = getOptimizedSoilValues();
 

@@ -1,10 +1,8 @@
 import React from 'react';
-import OmClayPercentageField from '../components/OmClayPercentageField';
+import NumberField from '../components/NumberField';
 import { connect } from 'react-redux';
-import {
-  updateReading,
-  updateOmClayPercentage
-} from '../actions';
+import { updateReading } from '../actions';
+import debounce from 'debounce';
 
 const getValueFromState = (state, ownProps) => {
   let val;
@@ -17,6 +15,12 @@ const getValueFromState = (state, ownProps) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    id: ownProps.id,
+    hintText: ownProps.hintText,
+    errorText: ownProps.errorText,
+    floatingLabelText: ownProps.floatingLabelText,
+    isRequired: false,
+    type: 'number',
     value: getValueFromState(state, ownProps)
   };
 };
@@ -24,14 +28,14 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onChange: (e) => {
-      dispatch(updateReading("omClayPercentage", e.target.value));
+      dispatch(updateReading(ownProps.id, e.target.value));
     }
   };
 };
 
-const OmClayPercentage = connect(
+const ReadingField = connect(
   mapStateToProps,
   mapDispatchToProps
-)(OmClayPercentageField);
+)(NumberField);
 
-export default OmClayPercentage;
+export default ReadingField;

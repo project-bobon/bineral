@@ -1,4 +1,13 @@
 export const optimizedSoilValues = {
+  fe0: {
+    Om: '-',
+    N: '-',
+    P2o5: '-',
+    K: '-',
+    Ca: '-',
+    Mg: '-',
+    Cation: '-'
+  },
   fe13: {
     Om: 1.9,
     N: 1.04,

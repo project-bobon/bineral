@@ -13,7 +13,8 @@ const chemistry = {
   P: "P",
   Zn: "Zn",
   pH: "pH",
-  OM: "OM"
+  OM: "OM",
+  Cation: "Cation"
 };
 
 export default chemistry;
