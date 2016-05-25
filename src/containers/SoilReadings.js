@@ -6,8 +6,8 @@ const getRequiredInputs = (state) => {
   let requiredInputs = {};
   Object.keys(state.optimizedSoilValues).forEach((id) => {
     let value = '-';
-    if (state.readings[id].value !== '') {
-      value = state.optimizedSoilValues[id] - state.readings[id].value;
+    if (state.readings[id] !== '') {
+      value = state.optimizedSoilValues[id] - state.readings[id];
       if (value < 0) {
         value = '-';
       } else {
