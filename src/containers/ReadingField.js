@@ -6,7 +6,7 @@ import debounce from 'debounce';
 
 const getValueFromState = (state, ownProps) => {
   let val;
-  let field = state.readings.find(item => item.id === ownProps.id);
+  let field = state.readings[ownProps.id];
   if (typeof(field) !== "undefined") {
     val = field.value;
   }

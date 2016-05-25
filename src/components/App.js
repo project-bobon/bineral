@@ -2,7 +2,7 @@ import React from 'react';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Card, CardHeader, Divider, Paper } from 'material-ui';
-import { grey900, grey700, grey500 } from 'material-ui/styles/colors'
+import { grey900, grey800, grey700 } from 'material-ui/styles/colors';
 
 import SoilTable from './SoilTable';
 import TopBar from './TopBar';
@@ -13,15 +13,15 @@ import t from '../t';
 const muiTheme = getMuiTheme({
   palette: {
     textColor: grey900,
-    primary2Color: grey700,
-    primary3Color: grey500,
+    primary2Color: grey800,
+    primary3Color: grey700
   },
   appBar: {
-    height: 80,
+    height: 50
   },
   palette: {
     primary1Color: grey900
-  },
+  }
 });
 
 class App extends React.Component {
@@ -30,7 +30,7 @@ class App extends React.Component {
   };
 
   getChildContext() {
-    return {muiTheme: getMuiTheme(muiTheme)};
+    return { muiTheme: getMuiTheme(muiTheme) };
   }
 
   render() {
@@ -46,7 +46,6 @@ class App extends React.Component {
           >
             <CardHeader
                 title="Physical Properties"
-                avatar="http://lorempixel.com/100/100/nature/"
                 style={ {padding: 0} }
             />
             <ReadingField
@@ -68,7 +67,16 @@ class App extends React.Component {
             />
             <Divider />
           </Card>
-          <Card>
+          <Card style={ {
+              padding: '20px',
+              marginBottom: '20px',
+              marginTop: '20px'
+            } }
+          >
+            <CardHeader
+                title="Soil's Alalysis Results"
+                style={ {padding: 0} }
+            />
             <SoilReadings />
           </Card>
         </section>

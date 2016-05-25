@@ -33,9 +33,9 @@ describe('<App>', () => {
 });
 
 describe('<SoilReadings/>', () => {
-  it('should have 4 columns', () => {
+  it('should have 3 columns', () => {
     const wrapper = renderApp();
-    expect(wrapper.find('th')).to.have.length(4);
+    expect(wrapper.find('th')).to.have.length(3);
   });
 
   it('should have all mineral fields', () => {

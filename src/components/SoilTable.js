@@ -27,7 +27,7 @@ const SoilTable = ({ optimizedSoilValues, requiredInputs }) => {
             enableSelectAll={ false }
         >
           <TableRow>
-            <TableHeaderColumn tooltip="Analysis result">Value</TableHeaderColumn>
+            <TableHeaderColumn tooltip="Analysis result" style={ { paddingLeft: 0 } }>Value</TableHeaderColumn>
             <TableHeaderColumn tooltip="Optimal value">Optimal Value</TableHeaderColumn>
             <TableHeaderColumn tooltip="Optimal value">Require Input</TableHeaderColumn>
           </TableRow>
@@ -41,15 +41,15 @@ const SoilTable = ({ optimizedSoilValues, requiredInputs }) => {
                   key={ index }
                   className={ "soil-reading-row-" + l.id }
               >
-                <TableRowColumn>
+                <TableRowColumn style={ { paddingLeft: 0 } } >
                   <ReadingField
                       id={ l.id }
                       floatingLabelText={ l.text + ' (' + l.unit + ')' }
-                      style={ {width: '100px'} }
+                      style={ {minWidth: '100px'} }
                   />
                 </TableRowColumn>
                 <TableRowColumn>
-                  { typeof(optimizedSoilValues) !== "undefined" ? optimizedSoilValues[l.id] : "" }
+                  { typeof(optimizedSoilValues) !== "undefined" ? optimizedSoilValues[l.id] : "-" }
                 </TableRowColumn>
                 <TableRowColumn>
                   { requiredInputs[l.id] }

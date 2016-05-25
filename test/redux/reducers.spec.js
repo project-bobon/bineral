@@ -17,19 +17,17 @@ describe('optimizesSoilValue', () => {
   });
 });
 
-const initialReadingsState = [
-  { id: 'omClayPercentage', value: 0 },
-  { id: 'soilDensity', value: 0 },
-  { id: 'soilOm', value: 0 },
-  { id: 'soilN', value: 0 },
-  { id: 'soilP2o5', value: 0 },
-  { id: 'soilK', value: 0 },
-  { id: 'soilCa', value: 0 },
-  { id: 'soilMg', value: 0 },
-  { id: 'soilCation', value: 0 }
-];
-
-const initialRequiredInputState = initialReadingState.slice(2);
+const initialReadingsState = {
+  'omClayPercentage': '',
+  'soilDensity': '',
+  'soilOm': '',
+  'soilN': '',
+  'soilP2o5': '',
+  'soilK': '',
+  'soilCa': '',
+  'soilMg': '',
+  'soilCation': ''
+};
 
 describe('readings reducers', () => {
   it('should have the initial state', () => {
@@ -46,8 +44,8 @@ describe('readings reducers', () => {
           type: types.UPDATE_READING,
           id: l.id,
           value: newValue
-        }).find((v) => v.id === l.id).value
-      ).to.eql(newValue);
+        })[l.id]
+      ).to.equal(newValue);
     });
   });
 });

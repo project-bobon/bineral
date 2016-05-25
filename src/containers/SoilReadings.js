@@ -5,14 +5,17 @@ import { connect } from 'react-redux';
 const getRequiredInputs = (state) => {
   let requiredInputs = {};
   Object.keys(state.optimizedSoilValues).forEach((id) => {
-    let value = '';
-    if (state.readings.find((v) => v.id === id).value !== '') {
-      value = state.optimizedSoilValues[id] - state.readings.find((v) => v.id === id).value;
+    let value = '-';
+    if (state.readings[id].value !== '') {
+      value = state.optimizedSoilValues[id] - state.readings[id].value;
       if (value < 0) {
-        value = '';
+        value = '-';
       } else {
-        value = value.toPrecision(3);
+        value = value.toFixed(2);
       }
+    }
+    if (value === 'NaN') {
+      value = '-';
     }
     requiredInputs[id] = value;
   });
