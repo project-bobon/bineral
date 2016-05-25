@@ -14,7 +14,7 @@ import {
   TableRowColumn
 } from 'material-ui/Table';
 
-const SoilTable = ({ optimizedSoilValues }) => {
+const SoilTable = ({ optimizedSoilValues, requiredInputs }) => {
   return(
     <section>
       <Table
@@ -23,12 +23,13 @@ const SoilTable = ({ optimizedSoilValues }) => {
       >
         <TableHeader
             displaySelectAll={ false }
-            adjustForCheckBox={ false }
+            adjustForCheckbox={ false }
             enableSelectAll={ false }
         >
           <TableRow>
             <TableHeaderColumn tooltip="Analysis result">Value</TableHeaderColumn>
             <TableHeaderColumn tooltip="Optimal value">Optimal Value</TableHeaderColumn>
+            <TableHeaderColumn tooltip="Optimal value">Require Input</TableHeaderColumn>
           </TableRow>
         </TableHeader>
         <TableBody
@@ -44,10 +45,14 @@ const SoilTable = ({ optimizedSoilValues }) => {
                   <ReadingField
                       id={ l.id }
                       floatingLabelText={ l.text + ' (' + l.unit + ')' }
-                  /> { l.unit }
+                      style={ {width: '100px'} }
+                  />
                 </TableRowColumn>
                 <TableRowColumn>
                   { typeof(optimizedSoilValues) !== "undefined" ? optimizedSoilValues[l.id] : "" }
+                </TableRowColumn>
+                <TableRowColumn>
+                  { requiredInputs[l.id] }
                 </TableRowColumn>
               </TableRow>
             )) }

@@ -1,8 +1,9 @@
-import App from '../../src/components/App';
 import React from 'react';
+import { TableHeaderColumn } from 'material-ui/table';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 
+import App from '../../src/components/App';
 import SoilReadings from '../../src/containers/SoilReadings';
 import TopBar from '../../src/components/TopBar';
 import { getOptimizedSoilValues } from '../../src/helpers';
@@ -27,6 +28,14 @@ describe('<App>', () => {
   it('should have SoilReadings', () => {
     const wrapper = shallow(<App/>);
     expect(wrapper.find(SoilReadings)).to.have.length(1);
+  });
+
+});
+
+describe('<SoilReadings/>', () => {
+  it('should have 4 columns', () => {
+    const wrapper = renderApp();
+    expect(wrapper.find('th')).to.have.length(4);
   });
 
   it('should have all mineral fields', () => {

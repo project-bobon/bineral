@@ -17,65 +17,37 @@ describe('optimizesSoilValue', () => {
   });
 });
 
+const initialReadingsState = [
+  { id: 'omClayPercentage', value: 0 },
+  { id: 'soilDensity', value: 0 },
+  { id: 'soilOm', value: 0 },
+  { id: 'soilN', value: 0 },
+  { id: 'soilP2o5', value: 0 },
+  { id: 'soilK', value: 0 },
+  { id: 'soilCa', value: 0 },
+  { id: 'soilMg', value: 0 },
+  { id: 'soilCation', value: 0 }
+];
 
-describe('readings', () => {
-  const initialState = [
-    { id: 'omClayPercentage', value: 0, requiredInput: '' },
-    { id: 'soilDensity', value: 0, requiredInput: '' },
-    { id: 'soilOm', value: 0, requiredInput: '' },
-    { id: 'soilN', value: 0, requiredInput: '' },
-    { id: 'soilP2o5', value: 0, requiredInput: '' },
-    { id: 'soilK', value: 0, requiredInput: '' },
-    { id: 'soilCa', value: 0, requiredInput: '' },
-    { id: 'soilMg', value: 0, requiredInput: '' },
-    { id: 'soilCation', value: 0, requiredInput: '' }
-  ];
+const initialRequiredInputState = initialReadingState.slice(2);
 
+describe('readings reducers', () => {
   it('should have the initial state', () => {
     expect(
       readings(undefined, {})
-    ).to.eql(initialState);
+    ).to.eql(initialReadingsState);
   });
 
   it('should update readings state values when changed', () => {
     let newValue = 20;
     labels.forEach((l) => {
       expect(
-        readings(initialState, {
+        readings(initialReadingsState, {
           type: types.UPDATE_READING,
           id: l.id,
           value: newValue
         }).find((v) => v.id === l.id).value
       ).to.eql(newValue);
-    });
-  });
-
-  it('should update required input value based on optimized val', () => {
-    let newValue = 0.2;
-    let omClayPercentage = 34;
-    let expectedOptimizedValues = getOptimizedSoilValues(omClayPercentage);
-    let expectedValues = initialState.slice(2).map((v) => {
-      let requiredInput = expectedOptimizedValues[v.id] - newValue;
-      if (requiredInput < 0) {
-        requiredInput = '';
-      }
-      return {
-        ...v,
-        requiredInput,
-        value: newValue
-      };
-    });
-    let startingState = [
-      { id: 'omClayPercentage', value: omClayPercentage, requiredInput: '' },
-      ...initialState.slice(1)
-    ];
-    labels.forEach((l) => {
-      let expectedSingleState = expectedValues.find((v) => v.id === l.id);
-      let resultSingleState = readings(
-          startingState,
-          { type: types.UPDATE_READING, id: l.id, value: newValue }
-        ).find((v) => v.id === l.id)
-      expect(resultSingleState).to.eql(expectedSingleState);
     });
   });
 });

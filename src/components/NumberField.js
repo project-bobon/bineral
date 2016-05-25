@@ -7,6 +7,10 @@ const NumberField = ({
   hintText = '',
   errorText = '',
   floatingLabelText = '',
+  style = {},
+  inputStyle = {},
+  underlineShow = true,
+  fullWidth = false,
   type = 'number'
 }) => (
   <TextField
@@ -16,7 +20,10 @@ const NumberField = ({
       floatingLabelText={ floatingLabelText }
       type={ type }
       onChange={ onChange }
-      fullWidth={ true }
+      style={ style }
+      inputStyle={ inputStyle }
+      underlineShow={ underlineShow }
+      fullWidth={ fullWidth }
   />
 );
 

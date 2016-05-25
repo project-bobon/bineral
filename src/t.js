@@ -4,7 +4,7 @@ const textData = {
     VN: "Tính kết quả"
   },
   FERTILIZER_CALCULATOR: {
-    EN: "Fertilizer Calculator",
+    EN: "Bobon's Fertilizer Calculator",
     VN: "Bảng tính lượng phân bón"
   },
   OM_CLAY_PERCENTAGE: {
@@ -20,8 +20,8 @@ const textData = {
     VN: "Thông tin bắt buộc"
   },
   OM: {
-    EN: "Organic material",
-    VN: "Chất hữu cơ"
+    EN: "OM",
+    VN: "Hữu cơ"
   }
 };
 
