@@ -8,6 +8,7 @@ import SoilTable from './SoilTable';
 import TopBar from './TopBar';
 import SoilReadings from '../containers/SoilReadings';
 import ReadingField from '../containers/ReadingField';
+import RequiredFertilizer from '../containers/RequiredFertilizer';
 import t from '../t';
 
 const muiTheme = getMuiTheme({
@@ -79,6 +80,7 @@ class App extends React.Component {
             />
             <SoilReadings />
           </Card>
+          <RequiredFertilizer />
         </section>
       </div>
     );

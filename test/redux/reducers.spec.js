@@ -18,15 +18,16 @@ describe('optimizesSoilValue', () => {
 });
 
 const initialReadingsState = {
-  'omClayPercentage': '',
-  'soilDensity': '',
-  'soilOm': '',
-  'soilN': '',
-  'soilP2o5': '',
-  'soilK': '',
-  'soilCa': '',
-  'soilMg': '',
-  'soilCation': ''
+  omClayPercentage: 0,
+  soilDensity: 0,
+  soilOm: 0,
+  soilN: 0,
+  soilP2o5: 0,
+  soilK: 0,
+  soilCa: 0,
+  soilMg: 0,
+  soilCation: 0,
+  soilDepth: 20
 };
 
 describe('readings reducers', () => {

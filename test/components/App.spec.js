@@ -29,7 +29,6 @@ describe('<App>', () => {
     const wrapper = shallow(<App/>);
     expect(wrapper.find(SoilReadings)).to.have.length(1);
   });
-
 });
 
 describe('<SoilReadings/>', () => {
@@ -39,8 +38,8 @@ describe('<SoilReadings/>', () => {
   });
 
   it('should have all mineral fields', () => {
-    const ids = Object.keys(getOptimizedSoilValues());
     const wrapper = renderApp();
+    const ids = Object.keys(getOptimizedSoilValues());
     ids.forEach((id) => {
       expect(wrapper.find('.soil-reading-row-' + id)).to.have.length(1);
       expect(wrapper.find('#' + id)).to.have.length(1);

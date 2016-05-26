@@ -1,4 +1,3 @@
-import React from 'react';
 import NumberField from '../components/NumberField';
 import { connect } from 'react-redux';
 import { updateReading } from '../actions';

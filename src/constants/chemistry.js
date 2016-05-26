@@ -1,4 +1,4 @@
-const chemistry = {
+export const elements = {
   B: "B",
   Ca: "Ca",
   Cu: "Cu",
@@ -17,4 +17,6 @@ const chemistry = {
   Cation: "Cation"
 };
 
-export default chemistry;
+export const atomicNumbers = {
+
+};
