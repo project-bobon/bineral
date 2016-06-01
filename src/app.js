@@ -9,7 +9,7 @@ import App from 'components/App';
 require('../scss/app.scss');
 
 injectTapEventPlugin();
-let store = createStore(bineralApp);
+let store = createStore(bineralApp, {}, window.devToolsExtension && window.devToolsExtension());
 
 render(
   <Provider store={ store }>

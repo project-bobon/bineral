@@ -2,9 +2,6 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import ReadingField from '../containers/ReadingField';
-import t from '../t';
-import labels from '../constants/labels';
 import {
   Table,
   TableBody,
@@ -13,6 +10,10 @@ import {
   TableRow,
   TableRowColumn
 } from 'material-ui/Table';
+
+import ReadingField from '../containers/ReadingField';
+import labels from '../constants/labels';
+import t from '../t';
 
 const SoilTable = ({ optimizedSoilValues, requiredInputs }) => {
   return(

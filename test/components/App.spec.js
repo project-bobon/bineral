@@ -4,6 +4,7 @@ import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 
 import App from '../../src/components/App';
+import FertRecommendations from '../../src/containers/FertRecommendations';
 import SoilReadings from '../../src/containers/SoilReadings';
 import TopBar from '../../src/components/TopBar';
 import { getOptimizedSoilValues } from '../../src/helpers';
@@ -28,6 +29,11 @@ describe('<App>', () => {
   it('should have SoilReadings', () => {
     const wrapper = shallow(<App/>);
     expect(wrapper.find(SoilReadings)).to.have.length(1);
+  });
+
+  it('should have FertRecommendations', () => {
+    const wrapper = shallow(<App/>);
+    expect(wrapper.find(FertRecommendations)).to.have.length(1);
   });
 });
 

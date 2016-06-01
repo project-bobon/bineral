@@ -8,7 +8,7 @@ import SoilTable from './SoilTable';
 import TopBar from './TopBar';
 import SoilReadings from '../containers/SoilReadings';
 import ReadingField from '../containers/ReadingField';
-import RequiredFertilizer from '../containers/RequiredFertilizer';
+import FertRecommendations from '../containers/FertRecommendations';
 import t from '../t';
 
 const muiTheme = getMuiTheme({
@@ -46,25 +46,25 @@ class App extends React.Component {
             } }
           >
             <CardHeader
-                title="Physical Properties"
-                style={ {padding: 0} }
+              title="Physical Properties"
+              style={ {padding: 0} }
             />
             <ReadingField
-                id="omClayPercentage"
-                hintText={ t('OM_CLAY_PERCENTAGE') }
-                floatingLabelText={ t('OM_CLAY_PERCENTAGE') }
-                type="number"
-                fullWidth={ true }
-                underlineShow={ false }
+              id="omClayPercentage"
+              hintText={ t('OM_CLAY_PERCENTAGE') }
+              floatingLabelText={ t('OM_CLAY_PERCENTAGE') }
+              type="number"
+              fullWidth={ true }
+              underlineShow={ false }
             />
             <Divider />
             <ReadingField
-                id="soilDensity"
-                hintText={ t('SOIL_DENSITY') }
-                floatingLabelText={ t('SOIL_DENSITY') }
-                type="number"
-                fullWidth={ true }
-                underlineShow={ false }
+              id="soilDensity"
+              hintText={ t('SOIL_DENSITY') }
+              floatingLabelText={ t('SOIL_DENSITY') }
+              type="number"
+              fullWidth={ true }
+              underlineShow={ false }
             />
             <Divider />
           </Card>
@@ -75,12 +75,13 @@ class App extends React.Component {
             } }
           >
             <CardHeader
-                title="Soil's Alalysis Results"
-                style={ {padding: 0} }
+              title="Soil's Alalysis Results"
+              style={ {padding: 0} }
             />
             <SoilReadings />
           </Card>
-          <RequiredFertilizer />
+
+          <FertRecommendations />
         </section>
       </div>
     );
