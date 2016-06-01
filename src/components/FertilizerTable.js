@@ -1,47 +1,55 @@
 import React from 'react';
-import { Card, CardHeader, CardText } from 'material-ui/Card';
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn
+} from 'material-ui/Table';
 
-import CardAvatar from './CardAvatar';
-
-const cardStyle = {
-  marginBottom: 20
-};
-
-const headerStyle = {
-  background: '#000',
-  color: '#fff'
-};
-
-const titleStyle = {
-  color: '#fff'
-};
-
-const FertilizerList = ({ requiredFertilizers }) => (
-  <section>
-    { Object.keys(requiredFertilizers).map(k => {
-        let el = requiredFertilizers[k];
-        let innerContent = '';
-
-        if (el.fertilizers.length > 0) {
-          innerContent = <CardText> { el.fertilizers.map(v => JSON.stringify(v)) } </CardText>;
-        }
-
-        return (
-          <Card
-            key={el.id}
-            style={ cardStyle }
-          >
-            <CardHeader
-              title={ 'Required: ' + el.value.toFixed(2) + ' ' + el.unit}
-              avatar={ <CardAvatar text={ el.id } /> }
-              style={ headerStyle }
-              titleStyle={ titleStyle }
-            />
-            { innerContent }
-          </Card>
-        );
-      }) }
-  </section>
+const FertilizerTable = ({ fertilizers }) => (
+  <Table
+    multiSelectable={ false }
+    selectable={ false }
+  >
+    <TableHeader
+      displaySelectAll={ false }
+      adjustForCheckbox={ false }
+      enableSelectAll={ false }
+    >
+      <TableRow>
+        <TableHeaderColumn
+          tooltip="Fertilizer"
+          style={ {
+              paddingLeft: 0
+            } }
+        >
+          Fertilizer
+        </TableHeaderColumn>
+        <TableHeaderColumn tooltip="Optimal value">Require Input</TableHeaderColumn>
+      </TableRow>
+    </TableHeader>
+    <TableBody
+      displayRowCheckbox={ false }
+      showRowHover={ true }
+    >
+      { fertilizers.map(f => {
+          return(
+            <TableRow
+              key={ f.id }
+            >
+              <TableRowColumn style={ {paddingLeft: 0} }>
+                { f.id }
+              </TableRowColumn>
+              <TableRowColumn>
+                { (f.value / 1000).toFixed(0) + ' kg / ha'}
+              </TableRowColumn>
+            </TableRow>
+          );
+        }) }
+    </TableBody>
+  </Table>
 );
 
-export default FertilizerList;
+export default FertilizerTable;

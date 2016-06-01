@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import FertilizerTable from '../components/FertilizerTable';
+import ResultList from '../components/ResultList';
 
 const calculateFertilizers = (state) => {
   const defaultUnit = 'mol/ha';
@@ -48,13 +48,29 @@ const calculateFertilizers = (state) => {
       P = 0;
 
   // Calculate N.
+  let requiredUrea = 0;
+  let requiredAnhydrousAmmonia = 0;
   if (readings.soilN >= optimizedSoilValues.soilN) {
     N = 0;
     requiredFertilizers.N.value = 0;
+    requiredAnhydrousAmmonia = 0;
+    requiredUrea = 0;
   } else {
     N = optimizedSoilValues.soilN;
     requiredFertilizers.N.value = (N - readings.soilN) / 0.1 / 1000 * soilFactor;
+    requiredUrea = requiredFertilizers.N.value / 2 * 60.06;
+    requiredAnhydrousAmmonia = requiredFertilizers.N.value * 17.031;
   }
+  requiredFertilizers.N.fertilizers = [
+    {
+      id: 'Urea',
+      value: requiredUrea
+    },
+    {
+      id: 'Anhydrous Ammonia',
+      value: requiredAnhydrousAmmonia
+    }
+  ];
 
   // Calculate P.
   if (readings.soilP >= optimizedSoilValues.soilP2o5) {
@@ -130,6 +146,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-const FertRecommendations = connect(mapStateToProps)(FertilizerTable);
+const FertRecommendations = connect(mapStateToProps)(ResultList);
 
 export default FertRecommendations;
