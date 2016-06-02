@@ -50,6 +50,7 @@ const calculateFertilizers = (state) => {
   // Calculate N.
   let requiredUrea = 0;
   let requiredAnhydrousAmmonia = 0;
+
   if (readings.soilN >= optimizedSoilValues.soilN) {
     N = 0;
     requiredFertilizers.N.value = 0;

@@ -20,7 +20,7 @@ const getRequiredInputs = (state) => {
     requiredInputs[id] = value;
   });
   return requiredInputs;
-}
+};
 
 const mapStateToProps = (state) => {
   return {

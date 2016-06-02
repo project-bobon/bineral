@@ -33,7 +33,7 @@ const ResultList = ({ requiredFertilizers }) => (
             style={ cardStyle }
           >
             <CardHeader
-              title={ 'Required: ' + el.value.toFixed(2) + ' ' + el.unit}
+              title={ 'Required: ' + el.value.toFixed(2) + ' ' + el.unit }
               avatar={ <CardAvatar text={ el.id } /> }
               style={ headerStyle }
               titleStyle={ titleStyle }

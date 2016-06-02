@@ -4,8 +4,8 @@ import t from '../t';
 
 const TopBar = () => (
   <AppBar
-      title={ t("FERTILIZER_CALCULATOR") }
-      iconClassNameRight="muidocs-icon-navigation-expand-more"
+    title={ t("FERTILIZER_CALCULATOR") }
+    iconClassNameRight="muidocs-icon-navigation-expand-more"
   />
 );
 
