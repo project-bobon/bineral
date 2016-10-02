@@ -2,6 +2,8 @@ Bineral is a coffee soil and leave mineral test result intepreter I developed fo
 
 The web app compares soil analysis results to Arabica coffee tree's optimal content. From there, the suggested amount of fertilizers is also calculated.
 
+Live example: [http://bobon.coffee/calculator/](http://bobon.coffee/calculator/)
+
 # Develop
 
     git clone git@github.com:nathandao/bineral.git
